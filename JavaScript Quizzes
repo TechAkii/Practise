@@ -1,0 +1,140 @@
+// 1
+console.log("My name is Akila");
+
+// 2
+let a = 10;
+let b = 20;
+console.log(a + b);
+
+// 3
+let number = 7;
+if (number % 2 === 0) {
+    console.log("Even Number");
+} else {
+    console.log("Odd Number");
+}
+
+// 4
+let num = -5;
+if (num > 0) {
+    console.log("Positive number");
+} else if (num < 0) {
+    console.log("Negative number");
+} else {
+    console.log("Zero");
+}
+
+// 5
+let marks = 68;
+if (marks >= 75) {
+    console.log("Grade A");
+} else if (marks >= 65) {
+    console.log("Grade B");
+} else if (marks >= 50) {
+    console.log("Grade C");
+} else {
+    console.log("Grade F");
+}
+
+// 6
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+// 7
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+}
+
+// 8
+for (let i = 1; i <= 10; i++) {
+    console.log("5 * " + i + " = " + i * 5);
+}
+
+// 9
+let str = "hello";
+let reversed = "";
+for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+}
+console.log(reversed);
+
+// 11
+let vowelCount = 0;
+let str4 = "education";
+for (let j = 0; j < str4.length; j++) {
+    if (
+        str4[j] === "a" ||
+        str4[j] === "e" ||
+        str4[j] === "i" ||
+        str4[j] === "o" ||
+        str4[j] === "u"
+    ) {
+        vowelCount++;
+    }
+}
+console.log(vowelCount);
+
+// 12
+let n = 5;
+let total = 0;
+for (let i = 1; i <= n; i++) {
+    total += i;
+}
+console.log(total);
+
+// 13
+let str2 = "madam";
+let str3 = "";
+for (let i = str2.length - 1; i >= 0; i--) {
+    str3 += str2[i];
+}
+if (str2 === str3) {
+    console.log("Palindrome");
+} else {
+    console.log("Not a Palindrome");
+}
+
+// 14
+let numbers = [1, 2, 3, 4, 5];
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+console.log(sum);
+
+// 15
+let numbers2 = [12, 45, 7, 89, 23];
+let max = numbers2[0];
+for (let i = 1; i < numbers2.length; i++) {
+    if (numbers2[i] > max) {
+        max = numbers2[i];
+    }
+}
+console.log(max);
+
+// 16
+for (let i = 1; i <= 20; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
+    } else if (i % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
+
+// 17
+let arr = [1, 2, 2, 3, 4, 4, 5];
+let uniqueArr = [];
+
+for (let i = 0; i < arr.length; i++) {
+    if (!uniqueArr.includes(arr[i])) {
+        uniqueArr.push(arr[i]);
+    }
+}
+console.log(uniqueArr);
