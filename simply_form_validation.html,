@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Practice for JavaScript</title>
+    <style>
+        * {
+            background-color: #aaed5328;
+            color: #000000;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 50px auto;
+        }
+
+        .sector {
+            margin: 20px 50px;
+            padding: 10px 25px;
+        }
+
+        input {
+            width: 250px;
+            height: 30px;
+            padding: 5px;
+            background-color: white;
+        }
+
+        #js1, #js2, #js3, #js4, #js5 {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            background-color: transparent;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="" method="POST" name="form1" onsubmit="return validateForm()">
+        <div class="sector">
+            <span>Name</span><br>
+            <input type="text" id="name" name="name">
+            <div id="js1"></div>
+        </div>
+
+        <div class="sector">
+            <span>Email</span><br>
+            <input type="text" id="email" name="email">
+            <div id="js2"></div>
+        </div>
+
+        <div class="sector">
+            <span>Password</span><br>
+            <input type="password" id="password1" name="password1">
+            <div id="js3"></div>
+        </div>
+
+        <div class="sector">
+            <span>Confirm Password</span><br>
+            <input type="password" id="password2" name="password2">
+            <div id="js4"></div>
+        </div>
+
+        <div class="sector">
+            <span>Phone Number</span><br>
+            <input type="text" id="number" name="number">
+            <div id="js5"></div>
+        </div>
+
+        <div class="sector">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            let name = document.forms["form1"]["name"].value.trim();
+            let email = document.forms["form1"]["email"].value.trim();
+            let password1 = document.forms["form1"]["password1"].value;
+            let password2 = document.forms["form1"]["password2"].value;
+            let number = document.forms["form1"]["number"].value.trim();
+
+            document.getElementById("js1").innerHTML = "";
+            document.getElementById("js2").innerHTML = "";
+            document.getElementById("js3").innerHTML = "";
+            document.getElementById("js4").innerHTML = "";
+            document.getElementById("js5").innerHTML = "";
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+            let phonePattern = /^[0-9]{10}$/;
+
+            if (name === "") {
+                document.getElementById("js1").innerHTML = "Name is required";
+                return false;
+            }
+
+            if (email === "") {
+                document.getElementById("js2").innerHTML = "Email is required";
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("js2").innerHTML = "Enter a valid email address";
+                return false;
+            }
+
+            if (password1 === "") {
+                document.getElementById("js3").innerHTML = "Password is required";
+                return false;
+            }
+
+            if (!passwordPattern.test(password1)) {
+                document.getElementById("js3").innerHTML = "Password must be at least 8 characters and contain letters and numbers";
+                return false;
+            }
+
+            if (password2 === "") {
+                document.getElementById("js4").innerHTML = "Confirm password is required";
+                return false;
+            }
+
+            if (password1 !== password2) {
+                document.getElementById("js4").innerHTML = "Passwords do not match";
+                return false;
+            }
+
+            if (number === "") {
+                document.getElementById("js5").innerHTML = "Phone number is required";
+                return false;
+            }
+
+            if (!phonePattern.test(number)) {
+                document.getElementById("js5").innerHTML = "Phone number must be 10 digits";
+                return false;
+            }
+
+            alert("Form submitted successfully");
+            return true;
+        }
+    </script>
+
+</body>
+</html>
