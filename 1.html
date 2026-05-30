@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p onclick="this.innerHTML='Hello world'">
+        This is the text
+    </p>
+
+    <p id="demo" onclick="changetext()">
+        This is the text
+    </p>
+    <p id="demo1" onclick="document.getElementById('demo1').innerHTML = 'Hello world'">
+        This is the
+    </p>
+
+
+
+    <table border="1">
+        <caption>Data Description</caption>
+        <tr style="background-color:blue">
+            <th>Name</th>
+            <th>Description</th>
+            <th>Student ID</th>
+            <th>Date</th>
+        </tr>
+        <tr>
+            <td colspan="4">Derivations</td>
+        </tr>
+        <tr>
+            <td colspan="2">User Roll</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Author</td>
+            <td></td>
+            <td>Signature</td>
+        </tr>
+        <tr colspan="2">
+            <td>a</td>
+            <td>a</td>
+        </tr>
+    </table>
+
+
+    <form>
+
+        <fieldset>
+            <legend>Student Information</legend>
+
+            Name:
+            <input type="text"><br><br> Student ID:
+            <input type="text">
+
+        </fieldset>
+
+    </form>
+
+
+    <form action="result.php">
+        <p>
+            <label>Index Number : </label>
+            <input type="text" name="index">
+        </p>
+        <p>
+            <label>Semester : </label>
+            <input type="text" name="sem">
+        </p>
+        <p>
+            <label>Marks 1 : </label>
+            <input type="text" name="marks1">
+        </p>
+        <p>
+            <label>Marks 2 : </label>
+            <input type="text" name="marks2">
+        </p>
+        <p>
+            <label>Marks 3 : </label>
+            <input type="text" name="marks3">
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+
+
+    <script>
+        let price, quantity = 0;
+
+        function changetext() {
+            document.getElementById('demo').innerHTML = "Hello world";
+        }
+
+        function calculateTotalPrice(price, quantity) {
+            var total = price * quantity;
+            console.log("$" + total);
+        }
+        calculateTotalPrice(10, 5);
+
+        const fruits = ['apple', 'banana', 'cherry', 'grapes', 'mango'];
+
+        for (let fruit of fruits) {
+            console.log(fruit);
+        }
+    </script>
+    <?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $username = $_POST["username"];
+
+    echo "Hello $username";
+
+}
+
+?>
+
+</body>
+
+</html>
